@@ -22,10 +22,10 @@ const Content: React.FC = () => {
       <div id="tsparticles" className="particles-background" />
       <div className="content-container">
         <div className="content-left">
-          <h2 className="animated-title">Welcome to ICG GAMING</h2>
+          <h2 className="animated-title">欢迎来到ICG GAMING</h2>
           <p>ICG GAMING顶级包网方案，拥有15年该领域经验，我们为您提供专业的一站式解决方案。让您的线上博彩业务快速上线、高效运作、灵活定制，助力您在市场中脱颖而出！</p>
-          <a href="https://t.me/c/2126586273/89" target="_blank" rel="noopener noreferrer">
-            <button className="cta-button">Get Started</button>
+          <a href="https://t.me/icggaming_gary" target="_blank" rel="noopener noreferrer">
+            <button className="cta-button">立即开始</button>
           </a>
         </div>
         <div className="content-right">
