@@ -1,0 +1,106 @@
+footer {
+  background: #2b2d42;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+  z-index: 100;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 101;
+}
+
+.telegram-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  background: #ffb902;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 102;
+  cursor: pointer;
+}
+
+.telegram-link:hover {
+  background: #fc0100;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-link i {
+  font-size: 1.4rem;
+}
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 102;
+}
+
+.qr-code:hover {
+  transform: scale(1.05);
+}
+
+.qr-code img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    gap: 1rem;
+  }
+
+  .telegram-link {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .telegram-link {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .qr-code {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer-content {
+    gap: 0.5rem;
+  }
+
+  .qr-code {
+    width: 70px;
+    height: 70px;
+  }
+}
