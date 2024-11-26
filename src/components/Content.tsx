@@ -7,7 +7,7 @@ import Footer from './Footer';
 import './Content.css';
 
 const Content: React.FC = () => {
-  const [language, setLanguage] = useState<'en' | 'zh'>('zh');
+  const [language, setLanguage] = useState<'en' | 'zh'>('en');
 
   useEffect(() => {
     const loadParticles = async () => {
