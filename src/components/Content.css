@@ -137,7 +137,7 @@
 
 .animated-title::before,
 .animated-title::after {
-  content: '欢迎来到ICG GAMING';
+  content: attr(data-content);
   position: absolute;
   top: 0;
   left: 0;
@@ -157,6 +157,26 @@
   animation: glitchText 2.5s infinite;
   clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
   transform: translate(2px);
+}
+
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 @keyframes glitchText {

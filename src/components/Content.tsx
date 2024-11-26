@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { loadSlim } from "tsparticles-slim";
 import { tsParticles } from "tsparticles-engine";
 import { particlesConfig } from './particlesConfig';
+import { content } from './languageContent';
+import Footer from './Footer';
 import './Content.css';
 
 const Content: React.FC = () => {
+  const [language, setLanguage] = useState<'en' | 'zh'>('zh');
+
   useEffect(() => {
     const loadParticles = async () => {
       try {
@@ -17,24 +21,43 @@ const Content: React.FC = () => {
     loadParticles();
   }, []);
 
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+  };
+
   return (
-    <div className="content">
-      <div id="tsparticles" className="particles-background" />
-      <div className="content-container">
-        <div className="content-left">
-          <h2 className="animated-title">欢迎来到ICG GAMING</h2>
-          <p>ICG GAMING顶级包网方案，拥有15年该领域经验，我们为您提供专业的一站式解决方案。让您的线上博彩业务快速上线、高效运作、灵活定制，助力您在市场中脱颖而出！</p>
-          <a href="https://t.me/icggaming_gary" target="_blank" rel="noopener noreferrer">
-            <button className="cta-button">立即开始</button>
-          </a>
-        </div>
-        <div className="content-right">
-          <div className="image-container">
-            <img src="./images/Gary-chinese.png" alt="ICG Gaming Platform Preview" loading="lazy" />
+    <>
+      <div className="content">
+        <button onClick={toggleLanguage} className="language-toggle">
+          {language === 'en' ? '中文' : 'English'}
+        </button>
+        <div id="tsparticles" className="particles-background" />
+        <div className="content-container">
+          <div className="content-left">
+            <h2 
+              className="animated-title"
+              data-content={content[language].title}
+            >
+              {content[language].title}
+            </h2>
+            <p>{content[language].description}</p>
+            <a href="https://t.me/icggaming_gary" target="_blank" rel="noopener noreferrer">
+              <button className="cta-button">{content[language].buttonText}</button>
+            </a>
+          </div>
+          <div className="content-right">
+            <div className="image-container">
+              <img 
+                src={language === 'en' ? "./images/Banner.png" : "./images/Banner.png"} 
+                alt="ICG Gaming Platform Preview" 
+                loading="lazy" 
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer language={language} />
+    </>
   );
 };
 

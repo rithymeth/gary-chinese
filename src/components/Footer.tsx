@@ -1,13 +1,18 @@
 import React from 'react';
+import { content } from './languageContent';
 import './Footer.css';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  language: 'en' | 'zh';
+}
+
+const Footer: React.FC<FooterProps> = ({ language }) => {
   return (
     <footer>
       <div className="footer-content">
         <a href="https://t.me/icggaming_gary" className="telegram-link" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-telegram"></i>
-          加入我们的Telegram
+          {content[language].footerText}
         </a>
         <div className="qr-code">
           <img src="./images/icg-gary.png" alt="Telegram QR Code" loading="lazy" />
